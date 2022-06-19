@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Details</title>
+        <link rel="stylesheet" href="/static/css/eachcardetails.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>Details</h1>
+        </section>
+
+
+        <div class="small-container single-product">
+            <div class="detailsrow">
+                <div class="about-col">
+                    <img src="{{ car_detail.front.url }}" width="100%" id="ProductImg">
+
+                    <div class="small-img-row">
+
+                        <div class="small-img-col">
+                            <img src="{{ car_detail.front.url }}" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="{{ car_detail.rear.url }}" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="{{ car_detail.side.url }}" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="{{ car_detail.interior.url }}" width="100%" class="small-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col">
+                    <h1>{{ car_details.carname }}</h1> <br>
+
+                    <h4> Car Details </h4> <br>
+                    <ul style="list-style-type: square;">
+                        <li>Price:Rs {{ car_detail.price }}</li>
+                        <li>Make Year: {{ car_detail.make_year }}</li>
+                        <li>Running:{{ car_detail.running }} KM</li>
+                        <li>Model:{{ car_detail.model }}</li>
+                        <li>Color:{{ car_detail.color }}</li>
+                        <li>Engine:{{ car_detail.enginer }}</li>
+                        <li>Fuel:{{ car_detail.fuel }}</li>
+                        <li>Transmission:{{ car_detail.transmission }}</li>
+                        <li>Features: {{ car_detail.features }}</li>
+                    </ul> <br><br>
+
+                    <h4> Seller Details </h4> <br>
+                    <ul style="list-style-type: square;">
+                        <li>Name: {{ car_detail.seller_name }}</li>
+                        <li>Phone:{{ car_detail.number }}</li>
+                        <li>Location:{{ car_detail.location }}</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {% include "frontend/footer.html" %}
+
+        <!--js for product-->
+
+        <script>
+            var ProductImg = document.getElementById("ProductImg");
+            var SmallImg = document.getElementsByClassName("small-img");
+
+            SmallImg[0].onclick = function () {
+                ProductImg.src = SmallImg[0].src;
+            }
+
+            SmallImg[1].onclick = function () {
+                ProductImg.src = SmallImg[1].src;
+            }
+            SmallImg[2].onclick = function () {
+                ProductImg.src = SmallImg[2].src;
+            }
+            SmallImg[3].onclick = function () {
+                ProductImg.src = SmallImg[3].src;
+            }
+
+        </script>
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>
+    </body>
+
+</html>

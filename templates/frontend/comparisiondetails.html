@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Comparisons</title>
+        <link rel="stylesheet" href="/static/css/comp/style.css">
+        <link rel="stylesheet" href="/static/css/comp/comparisondetails.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>Comparisons</h1>
+        </section>
+
+        <section class="comparison">
+            <img src="{{comparision_detail.vs_image.url}}" alt="car vs car image">
+            <h1>{{comparision_detail.name}}</h1>
+        </section>
+
+
+        <section class="table-comparison">
+            <table>
+                <tr id="header">
+                    <th>Basic Information</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+              
+
+                <tr>
+                    <td>Price</td>
+                    <td>{{comparision_detail.first_car.price}}</td>
+                    <td>{{comparision_detail.second_car.price}}</td>
+                </tr>
+
+                <tr>
+                    <td>Engine Type</td>
+                    <td>{{comparision_detail.first_car.engine_type}}</td>
+                    <td>{{comparision_detail.second_car.engine_type}}</td>
+                </tr>
+                <tr>
+                    <td>Displacement(cc)</td>
+                    <td>{{comparision_detail.first_car.displacement}}</td>
+                    <td>{{comparision_detail.second_car.displacement}}</td>
+
+                </tr>
+                <tr>
+                    <td>No of Cylinder</td>
+                    <td>{{comparision_detail.first_car.cylinders}}</td>
+                    <td>{{comparision_detail.second_car.cylinders}}</td>
+                </tr>
+
+
+                <tr>
+                    <td>Max Power(bhp@rpm)</td>
+                    <td>{{comparision_detail.first_car.max_power}}</td>
+                    <td>{{comparision_detail.second_car.max_power}}</td>
+                </tr>
+                <tr>
+                    <td>Max Torque (nm@rpm)</td>
+                    <td>{{comparision_detail.first_car.max_torque}}</td>
+                    <td>{{comparision_detail.second_car.max_torque}}</td>
+
+                </tr>
+                <tr>
+                    <td>Valves Per Cylinder</td>
+                    <td>{{comparision_detail.first_car.valve_per_cylinder}}</td>
+                    <td>{{comparision_detail.second_car.valve_per_cylinder}}</td>
+
+                </tr>
+                <tr>
+                    <td>Valve Configuration</td>
+                    <td>{{comparision_detail.first_car.valve_configuration}}</td>
+                    <td>{{comparision_detail.second_car.valve_configuration}}</td>
+                </tr>
+                <tr>
+                    <td>Fuel Supply System</td>
+                    <td>{{comparision_detail.first_car.fuel_system}}</td>
+                    <td>{{comparision_detail.second_car.fuel_system}}</td>
+                </tr>
+                <tr>
+                    <td>Turbo Charger</td>
+                    <td>{{comparision_detail.first_car.turbo_charger}}</td>
+                    <td>{{comparision_detail.second_car.turbo_charger}}</td>
+
+                </tr>
+
+                <tr>
+                    <td>Transmission Type</td>
+                    <td>{{comparision_detail.first_car.transmission}}</td>
+                    <td>{{comparision_detail.second_car.transmission}}</td>
+                </tr>
+
+                <tr>
+                    <td>Gear Box</td>
+                    <td>{{comparision_detail.first_car.gear_box}}</td>
+                    <td>{{comparision_detail.second_car.gear_box}}</td>
+
+                </tr>
+
+                <tr>
+                    <td>Drive Type</td>
+                    <td>{{comparision_detail.first_car.drive_type}}</td>
+                    <td>{{comparision_detail.second_car.drive_type}}</td>
+                </tr>
+
+                <tr>
+                    <td>Fuel Type</td>
+                    <td>{{comparision_detail.first_car.fuel_type}}</td>
+                    <td>{{comparision_detail.second_car.fuel_type}}</td>
+                </tr>
+                <tr>
+                    <td>Emission Norm Compliance</td>
+                    <td>{{comparision_detail.first_car.emission}}</td>
+                    <td>{{comparision_detail.second_car.emission}}</td>
+                </tr>
+                <tr>
+                    <td>Mileage</td>
+                    <td>{{comparision_detail.first_car.milage}}</td>
+                    <td>{{comparision_detail.second_car.milage}}</td>
+                </tr>
+
+            </table>
+        </section>
+
+        <section class="table-comparison">
+            <table>
+                <tr id="header">
+                    <th>Suspension,Steering and Brakes</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+                <!--
+                <tr id="header">
+                    <th>Suspension,Steering and Brakes</th>
+                    <th>Hyundai Creta SX Opt Diesel AT DT</th>
+                    <th>Kia Seltos X-line AT D</th>
+                </tr> -->
+
+                <tr>
+                    <td>Front Suspension</td>
+                    <td>{{comparision_detail.first_car.front_suspension}}</td>
+                    <td>{{comparision_detail.second_car.front_suspension}}</td>
+                </tr>
+
+                <tr>
+                    <td>Rear Suspension</td>
+                    <td>{{comparision_detail.first_car.rear_suspension}}</td>
+                    <td>{{comparision_detail.second_car.rear_suspension}}</td>
+                </tr>
+                <tr>
+                    <td>Steering Type</td>
+                    <td>{{comparision_detail.first_car.steering_type}}</td>
+                    <td>{{comparision_detail.second_car.steering_type}}</td>
+                </tr>
+                <tr>
+                    <td>Steering Column</td>
+                    <td>{{comparision_detail.first_car.steering_column}}</td>
+                    <td>{{comparision_detail.second_car.steering_column}}</td>
+                </tr>
+                <tr>
+                    <td>Steering gear type</td>
+                    <td>{{comparision_detail.first_car.steering_gear_type}}</td>
+                    <td>{{comparision_detail.second_car.steering_gear_type}}</td>
+                </tr>
+
+                <tr>
+                    <td>Front Brake Type</td>
+                    <td>{{comparision_detail.first_car.front_brakes}}</td>
+                    <td>{{comparision_detail.second_car.front_brakes}}</td>
+                </tr>
+                <tr>
+                    <td>Rear Brake Type</td>
+                    <td>{{comparision_detail.first_car.rear_brakes}}</td>
+                    <td>{{comparision_detail.second_car.rear_brakes}}</td>
+                </tr>
+
+                <tr>
+                    <td>Trye Size</td>
+                    <td>{{comparision_detail.first_car.tyre_size}}</td>
+                    <td>{{comparision_detail.second_car.tyre_size}}</td>
+                </tr>
+                <tr>
+                    <td>Trye Type</td>
+                    <td>{{comparision_detail.first_car.tyre_type}}</td>
+                    <td>{{comparision_detail.second_car.tyre_type}}</td>
+                </tr>
+                <tr>
+                    <td>Alloy Wheel Size</td>
+                    <td>{{comparision_detail.first_car.alloy_wheel_size}}</td>
+                    <td>{{comparision_detail.second_car.alloy_wheel_size}}</td>
+                </tr>
+                <tr>
+                    <td>Fuel Capacity</td>
+                    <td>{{comparision_detail.first_car.fuel_capacity}}</td>
+                    <td>{{comparision_detail.second_car.fuel_capacity}}</td>
+                </tr>
+
+
+            </table>
+        </section>
+
+
+        <section class="table-comparison">
+            <table>
+                <tr id="header">
+                    <th>Dimension and Capacity</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+                <tr>
+                    <td>Length(mm)</td>
+                    <td>{{comparision_detail.first_car.length}}</td>
+                    <td>{{comparision_detail.second_car.length}}</td>
+                </tr>
+
+                <tr>
+                    <td>Width(mm)</td>
+                    <td>{{comparision_detail.first_car.width}}</td>
+                    <td>{{comparision_detail.second_car.width}}</td>
+                </tr>
+                <tr>
+                    <td>Height(mm)</td>
+                    <td>{{comparision_detail.first_car.height}}</td>
+                    <td>{{comparision_detail.second_car.height}}</td>
+                </tr>
+                <tr>
+                    <td>Wheel Base(mm)</td>
+                    <td>{{comparision_detail.first_car.wheelbase}}</td>
+                    <td>{{comparision_detail.second_car.wheelbase}}</td>
+                </tr>
+                <tr>
+                    <td>Seating Capacity</td>
+                    <td>{{comparision_detail.first_car.seating_capacity}}</td>
+                    <td>{{comparision_detail.second_car.seating_capacity}}</td>
+                </tr>
+
+                <tr>
+                    <td>Boot Space (Litres)</td>
+                    <td>{{comparision_detail.first_car.boot_space}}</td>
+                    <td>{{comparision_detail.second_car.boot_space}}</td>
+                </tr>
+                <tr>
+                    <td>No. of Doors</td>
+                    <td>{{comparision_detail.first_car.doors}}</td>
+                    <td>{{comparision_detail.second_car.doors}}</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <section class="table-comparison">
+
+            <table>
+                <tr id="header">
+                    <th>Interior</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+
+                <tr>
+                    <td>Tachometer</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+
+
+                <tr>
+                    <td>Leather seats</td>
+                    {% if comparision_detail.first_car.leather_seats is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.leather_seats is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Leather steering wheel</td>
+                    {% if comparision_detail.first_car.leather_steering_wheel is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.leather_steering_wheel is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Digital Odometer</td>
+                    {% if comparision_detail.first_car.digital_odometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.digital_odometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                </tr>
+                <tr>
+                    <td>Ventilated seats</td>
+                    {% if comparision_detail.first_car.ventilated_seats is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.ventilated_seats is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Height adjustable driver seat</td>
+                    {% if comparision_detail.first_car.height_adjustable_seats is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.height_adjustable_seats is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Additional features</td>
+                    <td>{{comparision_detail.first_car.additional_features | safe}}</td>
+                    <td>{{comparision_detail.second_car.additional_features | safe}}</td>
+                </tr>
+
+            </table>
+        </section>
+
+        <section class="table-comparison">
+
+            <table>
+                <tr id="header">
+                    <th>Comfort & Convenience</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+
+                <tr>
+                    <td>Power Steering</td>
+                    {% if comparision_detail.first_car.power_steering is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                    {% if comparision_detail.second_car.power_steering is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+
+                <tr>
+                    <td>Power Boot</td>
+                    {% if comparision_detail.first_car.power_boot is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.power_boot is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Automatic Climate Control</td>
+                    {% if comparision_detail.first_car.automatic_climate_control is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.automatic_climate_control is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Air Quality Control</td>
+                    {% if comparision_detail.first_car.air_quality_control is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.air_quality_control is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+
+                <tr>
+                    <td>Rear AC Vents</td>
+                    {% if comparision_detail.first_car.rear_ac_vents is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.rear_ac_vents is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Rear AC Vents</td>
+                    <td>Rear</td>
+                    <td>Front and Rear</td>
+                </tr>
+                <tr>
+                    <td>Engine Start Stop Button</td>
+                    {% if comparision_detail.first_car.engine_start_stop is True %}
+                    <td style=" font-size:150%; font-weight:bold;  color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.engine_start_stop is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+
+                <tr>
+                    <td>USB Charger</td>
+                    <td>{{comparision_detail.first_car.usb_charger}}
+                    <td>{{comparision_detail.second_car.usb_charger}}
+                </tr>
+                <tr>
+                    <td>Cruise Control</td>
+                    {% if comparision_detail.first_car.cruise_control is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.cruise_control is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Parking Sensors</td>
+                    <td>{{comparision_detail.first_car.parking_sensor}}</td>
+                    <td>{{comparision_detail.second_car.parking_sensor}}</td>
+                </tr>
+                <tr>
+                    <td>Additional feautures</td>
+                    <td>{{comparision_detail.first_car.additional_features}}</td>
+                    <td>{{comparision_detail.second_car.additional_features}}</td>
+                </tr>
+
+            </table>
+        </section>
+
+
+        <section class="table-comparison">
+
+            <table class="color">
+                <tr id="header">
+                    <th>Exterior</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+
+                <tr>
+                    <td>Available Color</td>
+                    <td class="colors" style="text-align: center;">
+                        {{ comparision_detail.first_car.available_color | safe  }}
+                    </td>
+                    <td class="colors" style="text-align: center;">
+                        {{ comparision_detail.second_car.available_color | safe  }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Adjustable Headlights</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Fog Lighst Front</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Rear Window Wiper</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Alloy Wheels</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Sunroof</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+
+                <tr>
+                    <td>LED DRLs</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>LED Headlights</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>LED Taillights</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Additional Features</td>
+                    <td>{{comparision_detail.first_car.additional_features | safe }}</td>
+                    <td>{{comparision_detail.second_car.additional_features | safe }}</td>
+                </tr>
+
+            </table>
+        </section>
+
+        <section class="table-comparison">
+
+            <table>
+                <tr id="header">
+                    <th>Safety</th>
+                    <th>{{comparision_detail.first_car.name}}</th>
+                    <th>{{comparision_detail.second_car.name}}</th>
+                </tr>
+
+                <tr>
+                    <td>Anti Lock Braking System</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Central Locking</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Power Door Locks</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Child Safety Locks</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>No of Airbags</td>
+                    <td>{{comparision_detail.first_car.airbag}}</td>
+                    <td>{{comparision_detail.second_car.airbag}}</td>
+                </tr>
+                <tr>
+                    <td>Seat Belt Warning</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Hill Assist</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Heads Up Display</td>
+                    {% if comparision_detail.first_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+
+                    {% if comparision_detail.second_car.tachometer is True %}
+                    <td style=" font-size:150%; font-weight:bold; color:green;">&#10004;</td>
+                    {% else %}
+                    <td style=" font-size:140%; font-weight:bold; color:rgb(115, 23, 23)"> &#10060;</td>
+                    {% endif %}
+                </tr>
+
+                <tr>
+                    <td>Additional Safety Features</td>
+                    <td>{{comparision_detail.first_car.additional_features4 | safe}}</td>
+                    <td>{{comparision_detail.second_car.additional_features4 | safe}}</td>
+                </tr>
+
+
+            </table>
+        </section>
+        </section>
+        <section class="recommendations">
+            <h1>Pros and Cons</h1>
+        </section>
+
+        <section class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h2 style="background-color:maroon; color: white;">Pros</h2> <br>
+                    <h4 style="color: maroon;"> {{comparision_detail.first_car.name}} </h4> <br>
+                    {{comparision_detail.first_car.pros | safe}}
+                </div>
+                <div class="about-col"> <br><br>
+                    <h4 style="color: maroon;">{{comparision_detail.second_car.name}}</h4> <br>
+                    {{comparision_detail.second_car.pros | safe}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="about-col">
+                    <h2 style="background-color:maroon; color: white;">Cons</h2> <br>
+                    <h4 style="color: maroon;"> {{comparision_detail.first_car.name}} </h4> <br>
+                    {{comparision_detail.first_car.cons | safe}}
+
+                </div>
+                <div class="about-col"> <br><br>
+                    <h4 style="color: maroon;">{{comparision_detail.second_car.name}}</h4> <br>
+                    {{comparision_detail.second_car.cons | safe}}
+                </div>
+            </div>
+        </section>
+        {% include "frontend/footer.html" %}
+
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>
+
+    </body>
+
+</html>

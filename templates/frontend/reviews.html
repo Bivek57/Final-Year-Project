@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Reviews</title>
+        <link rel="stylesheet" href="/static/css/reviews_style">
+        <link rel="stylesheet" href="/static/css/market.css">
+        <link rel="stylesheet" href="/static/css/secondhand.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>Reviews</h1>
+        </section>
+
+        <section class="reviews">
+            <div class="small-container">
+
+
+                <div class="rowmarket">
+                    {% for review in reviews %}
+                    <div class="r-col">
+                        <img src="{{ review.thumbnail.url }}" alt="" width="250px" height="250px">
+                        <div class="layer">
+                            <a href="{% url 'reviews_details' review.name %}">
+                                <h3>{{ review.name }} </h3>
+                            </a>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                    <div class="page-btn">
+                        <a href="{% url 'all_reviews' %}">
+
+                            <br><br><button class="more submit-btn">Load More</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        {% include "frontend/footer.html" %}
+        
+                   
+
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+            rel="stylesheet">
+        <!-- <title>Document</title> -->
+    </head>
+
+    <body>
+        <nav>
+            <a href="/"><img src="/static/images/ttt.png"></a>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="{% url 'car_consultancy' %}">CAR CONSULTANCY</a></li>
+                    <li><a href="{% url 'comparision' %}">COMPARISON</a></li>
+                    <li><a href="{% url 'reviews' %}">REVIEWS</a></li>
+                    <li><a href="{% url 'market' %}">MARKET</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+
+                    {% endif %}
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    </body>
+
+</html>

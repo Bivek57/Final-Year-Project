@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Reviews</title>
+        <link rel="stylesheet" href="/static/css/reviews_style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+
+            <h1>Reviews</h1>
+        </section>
+
+        <section id="intro" class="about-us" style="padding: 0!important;">
+            <div class="row">
+                <div class="about-col">
+                    <h1>{{reviews.name}}</h1>
+                    <p>{{reviews.description | safe }}</p>
+
+                </div>
+                <div class="about-col">
+                    <img src="{{ reviews.thumbnail.url }}" alt="">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="interior" class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <img src="{{ reviews.interior_image.url }}" alt="">
+                </div>
+                <div class="about-col">
+                    <h2>Interior</h2>
+                    <p>{{ reviews.interior | safe  }}</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="exterior" class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h2>Exterior</h2>
+                    <p>{{ reviews.exterior | safe  }}</p>
+
+                </div>
+                <div class="about-col">
+                    <img src="{{ reviews.exterior_image.url }}" alt="">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="engine" class="about-us">
+            <div class="row">
+
+                <div class="about-col">
+                    <img src="{{ reviews.engine_performance_image.url}}" alt="">
+                </div>
+
+                <div class="about-col">
+                    <h2>Engine and Performance</h2>
+                    <p>{{ reviews.engine_performance | safe  }}</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="quality" class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h2>Drive Quality and Safety</h2>
+                    <p>{{ reviews.drivequality_safety | safe  }}</p>
+
+                </div>
+                <div class="about-col">
+                    <img src="{{ reviews.drivequality_safety_image.url }}" alt="">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="conclusion" class="about-us">
+            <div class="row">
+                
+                {{ reviews.conclusion | safe  }}
+
+            </div>
+        </section>
+
+
+    </br>
+
+        {% include "frontend/footer.html" %}
+
+       
+              
+
+
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>

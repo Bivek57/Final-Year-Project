@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Post Your Car</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/postyourcar.css">
+    <link rel="stylesheet" href="/static/js/message.js">
+    <link rel="stylesheet" href="/static/build.css">
+  </head>
+
+  <body>
+    <!-- pop up modal -->
+    {% if messages %}
+    {% for message in messages %}
+    <div id="error-modal"
+      class=" animate-pulse flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 fixed left-8 top-3">
+      <div class="flex items-center justify-center w-12 bg-emerald-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+        </svg>
+      </div>
+
+      <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+          <span class="font-semibold text-emerald-500 dark:text-emerald-400">Message</span>
+          <p class="text-sm text-gray-600 dark:text-gray-200">{{message}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- popup modal end -->
+    <section class="sub-header">
+      {% include "frontend/base.html" %}
+      <h1>Second Hand Market</h1>
+    </section>
+
+    <section class="post-form">
+      <div class="post-container">
+        <div class="title">Post Your Second Hand Car</div>
+        <div class="post-content">
+          <form action="{% url 'postcar' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="secondhand-details">
+
+              <div class="input-box">
+                <span class="car-details">Name of the seller</span>
+                <input type="text" name="seller" placeholder="Enter the name of the seller" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Contact Number</span>
+                <input type="text" name="number" placeholder="Your phone number" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Location</span>
+                <input type="text" name="location" placeholder="Your current location" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Car Name</span>
+                <input type="text" name="carname" placeholder="Enter the name of the car" required>
+              </div>
+
+              <div class="input-box">
+                <span class="car-details">Price for the car</span>
+                <input type="text" name="price" placeholder="Price" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Make Year</span>
+                <input type="text" name="year" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Running</span>
+                <input type="text" name="running" placeholder="in KM" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Model</span>
+                <input type="text" name="model" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Color</span>
+                <input type="text" name="color" placeholder="" required>
+              </div>
+
+              <div class="input-box">
+                <span class="car-details">Engine</span>
+                <input type="text" name="engine" placeholder="in CC" required>
+              </div>
+              <div class="input-box">
+                <span class="car-details">Transmission</span>
+                <input type="text" name="transmission" placeholder="" required>
+              </div>
+            </div>
+            <div class="fuel-details">
+              <input type="radio" name="fuel" value="petrol" id="dot-1">
+              <input type="radio" name="fuel" value="diesel" id="dot-2">
+              <input type="radio" name="fuel" value="electric" id="dot-3">
+              <span class="fuel-title">Fuel</span>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="fuel">Petrol</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="fuel">Diesel</span>
+                </label>
+                <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="fuel">Electric</span>
+                </label>
+              </div>
+            </div>
+
+
+            <div class="input-box">
+              <span class="car-details">Features</span>
+              <textarea id="" cols="60" rows="7" name="features" placeholder="Detailed features of your car"></textarea>
+            </div> <br>
+
+            <label for="imageUpload">Upload 4 images of your car (front,rear,side and interior)</label>
+            <input re accept="image/*" type="file" name="front" id="fileUpload">
+            <input re accept="image/*" type="file" name="rear" id="fileUpload">
+            <input re accept="image/*" type="file" name="side" id="fileUpload">
+            <input re accept="image/*" type="file" name="interior" id="fileUpload"> <br><br>
+            <button type="submit" class="more submit-btn">Post</button> <br><br>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    {% include "frontend/footer.html" %}
+
+
+
+    <script>
+      var navlinks = document.getElementById("navlinks");
+
+      function showMenu() {
+        navlinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navlinks.style.right = "-200px"
+      }
+
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Comparisons</title>
+        <link rel="stylesheet" href="/static/css/comp/style.css">
+        <link rel="stylesheet" href="/static/css/comp/market.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>Comparisons</h1>
+        </section>
+
+        <section id="more" class="news">
+
+
+            <div class="row">
+                {% for comparision in comparisions %}
+                <div class="news1column">
+                    <h3>{{comparision.name}}</h3>
+                    <a href="/comparision/{{comparision.name}}"><img src="{{comparision.thumbnail.url}}"></a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="page-btn">
+                <br><br>
+                <a href="{% url 'allcomp' %}">
+                    <button class="more submit-btn">Load More</button>
+                </a>
+            </div>
+        </section>
+        {% include "frontend/footer.html" %}
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>
+
+    </body>
+
+</html>

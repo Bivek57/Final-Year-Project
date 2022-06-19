@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/build.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script src="/static/js/message.js"></script>
+
+    </head>
+
+    <body>
+        <!-- pop up modal -->
+        {% if messages %}
+        {% for message in messages %}
+        <div id="error-modal"
+            class=" animate-pulse flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 fixed left-8 top-3">
+            <div class="flex items-center justify-center w-12 bg-emerald-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">{{message}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- popup modal end -->
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>Contact Us</h1>
+        </section>
+
+        <section class="location">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56537.535940567795!2d85.23874421246748!3d27.66796861673048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1812d78377ef%3A0x8c37cded908543b!2sKirtipur%2044600!5e0!3m2!1sen!2snp!4v1645179521915!5m2!1sen!2snp"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+        <section class="contact">
+            <div class="row">
+                <div class="contact-col">
+                    <div>
+                        <i class="fa fa-home"></i>
+                        <span>
+                            <h5>Kirtipur</h5>
+                            <p>Kathmandu,Nepal</p>
+                        </span>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <span>
+                            <h5>9845266900</h5>
+                            <p>Sunday to Friday (10AM to 5PM)</p>
+                        </span>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope-o"></i>
+                        <span>
+                            <h5>carsansar19@gmail.com</h5>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="consult-column">
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Enter your name" required>
+                            <input type="text" name="phone" placeholder="Enter your phone number" required>
+                            <input type="text" name="email" placeholder="Enter your email" required>
+                            <input type="text" name="address" placeholder="Enter your address" required>
+                            <textarea name="message" id="" cols="20" rows="10" placeholder="Send Message"></textarea>
+                            <button type="submit" class="more submit-btn">Send</button> <br><br>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        {% include "frontend/footer.html" %}
+
+        
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>

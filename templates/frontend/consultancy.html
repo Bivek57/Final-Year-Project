@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Car Consultancy</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/build.css">
+        <script src="/static/js/message.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!-- pop up modal -->
+        {% if messages %}
+        {% for message in messages %}
+        <div id="error-modal"
+            class=" animate-pulse flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 fixed left-8 top-3">
+            <div class="flex items-center justify-center w-12 bg-emerald-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">{{message}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- popup modal end -->
+        <section class="s-header">
+            {% include "frontend/base.html" %}
+            <h1>Car Consultancy</h1>
+        </section>
+
+        <section class="car-consultancy">
+            <div class="row">
+                <div class="consult-column">
+                    <h1>Consult Us</h1>
+                    <p>Are you confused in buying new car? Car Sansar also offers car consultancy services for easy car
+                        buying process as many clients are perplexed when purchasing a new vechicle.We will help you to
+                        give you the best choice as per your preferences. <br> <br> <br>
+                        Please fill the form below which includes your budget, shortlisted cars and your requirements as
+                        well as prioirities that you need in your new car. </p>
+                </div>
+                <div class="consult-column">
+                    <img src="/static/images/c.png">
+                </div>
+            </div>
+        </section>
+
+        <section class="car-consultancy">
+            <div class="row">
+                <div class="consult-column">
+                    <img src="/static/images/consult.png">
+                </div>
+                <div class="consult-column">
+                    <h2>Please fill the form.</h2>
+                    <p>(All the fields are mandatory)</p>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <h7>Enter your name.</h7>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                            <h7>Enter your phone number.</h7>
+                            <input type="text" name="phone" placeholder="Phone" required>
+                            <h7>Enter your email.</h7>
+                            <input type="text" name="email" placeholder="Email" required>
+                            <h7>Enter your address.</h7>
+                            <input type="text" name="address" placeholder="Address" required>
+                            <h7>Whats your car buying budget? (range: for example:30 to 35 lakhs)</h7>
+                            <input type="text" name="budget" placeholder="Budget" required>
+                            <h7>Whats your daily average travel? </h7>
+                            <input type="text" name="average_travel" placeholder="KM" required>
+                            <h7>How many people do you travel in general?</h7>
+                            <input type="text" name="number_of_people_traveling" placeholder="" required>
+                            <h7>What kind of road do you often travel?(City,Highway or Offroads)</h7>
+                            <input type="text" name="road_type" placeholder="" required>
+                            <h7>Your first priority in a car? (For instance:Safety or mileage or features)</h7>
+                            <input type="text" name="first_priority" placeholder="1st priority" required>
+                            <h7>Your second priority in a car? </h7>
+                            <input type="text" name="second_priority" placeholder="2nd priority" required>
+                            <h7>Your third priority in a car? </h7>
+                            <input type="text" name="third_priority" placeholder="3rd priority" required>
+                            <h7>Cars that you have shortlisted.</h7>
+                            <input type="text" name="cars_shortlisted" placeholder="Name of cars seperated by comma"
+                                required>
+                            <h7>Message (if any)</h7>
+                            <textarea name="message" id="" cols="20" rows="10" placeholder="Type Message"></textarea>
+                        </div> <br><br>
+                        <div id="status"></div>
+                        <button type="submit" class="more submit-btn">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        {% include "frontend/footer.html" %}
+
+
+
+
+
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>

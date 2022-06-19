@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Car Sansar</title>
+
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/build.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+        <!--linking css for swiper of recent news (swiper.js)-->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/static/css/swiper.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="/static/js/message.js"></script>
+
+    </head>
+
+    <body>
+        <!-- pop up modal -->
+        {% if messages %}
+        {% for message in messages %}
+        <div id="error-modal"
+            class=" animate-pulse flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 fixed left-8 top-3">
+            <div class="flex items-center justify-center w-12 bg-emerald-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-200">{{message}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- popup modal end -->
+        <section class="header">
+            {% include "frontend/base.html" %}
+            <div class="text">
+                <h1>Welcome to Car Sansar</h1>
+                <p>"Car news,Reviews,Comparisons,Car Consultancy,Second-hand Market <br> and many more."
+                </p>
+                <a href="#more" class="more">Read more</a>
+            </div>
+        </section>
+
+        <section id="more" class="news">
+            <h1>Recent news</h1>
+            <p>Get recent updates of cars in Market</p>
+        </section>
+
+
+        <section class="swiperr">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for news in recent_news %}
+                    <div class="swiper-slide"> <a href="newsdetails/{{ news.title }}"><img src="{{news.image.url}}"
+                                alt="" style="height: 70%;"></a>
+                        <h3>{{news.title}}</h3>
+                        <p>{{news.description}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <div class="swiper-pagination"></div>
+                </div>
+        </section>
+
+
+        <section class="recommendations">
+            <h1>Most Popular</h1>
+
+            <div class="row">
+                {% for mostp in most_popular %}
+                <div class="r-col">
+                    <img src="{{mostp.image.url}}" alt="" width="200px" height="250px">
+                    <div class="layer">
+                        <a href="{{mostp.url}}">
+                            <h3>{{mostp.title}} </h3>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </section>
+
+        <section class="saying">
+            <h1>What Our Customer Says</h1>
+            <p>Customer review on our services</p>
+
+            <div class="row">
+                <div class="saying-col">
+                    <img src="/static/images/u1.jpg" alt="">
+                    <div>
+                        <p>Car Sansar consultancy services has helped me to choose the best car for my family.</p>
+                        <h3>Sid Sid</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                <div class="saying-col">
+                    <img src="/static/images/u2.jpg" alt="">
+                    <div>
+                        <p>Car Sansar is the best car website of Nepal. I visit often to get updated with nepali car
+                            market.</p>
+                        <h3>Dr Sakshyam</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="consult">
+            <h1>Car Consultancy</h1>
+            <p>Confused buying cars that meets your needs? <br> We are here to help you in easy car buying process
+                giving you the best choice.</p> </br>
+            <a href="{% url 'car_consultancy' %}" class="more">Consult Us</a>
+        </section>
+
+
+        {% include "frontend/footer.html" %}
+
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 20,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+
+        </script>
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,76 @@
+ul{
+    list-style-type: square !important;
+    color: rgb(88, 91, 88) Im !important;
+}
+
+table{
+    
+    padding: 30px;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 11%;
+    /* height: 200px; */
+    border: 1px solid #bdc3c7;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2),-1px -1px 8px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+tr{
+    transition: all .2s ease-in;
+    cursor: pointer;
+    text-align: center;
+}tr:nth-child(even) {background-color: #f2f2f2;}
+
+th,
+td{
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+
+}
+#header{
+    background-color: maroon;
+    color: #fff;
+}
+
+
+.comparison{
+    margin: 50px auto;
+    width: 80%;   
+}
+.comparison img{
+  
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 0px;
+    position:relative;
+    
+}
+
+.comparison h1{
+    /* position: relative; */
+}
+/* .table-comparison{
+    margin-top: 2%;
+} */
+.comparison h1{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+
+}
+
+@media only screen and (max-width: 768px){
+    table{
+        width: 90%;
+    }
+}
+.colors{
+    text-align: initial;
+   
+}
+.colors li{
+    margin-left: 34%;
+}

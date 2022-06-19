@@ -1,0 +1,12 @@
+.env
+__pycache__
+/.vscode
+
+/media/cars/*.jpg
+/media/cars/*.png
+
+/media/pictures/*.png
+/media/pictures/*.jpg
+/media/thumbnails/*.jpg
+/media/thumbnails/*.png
+

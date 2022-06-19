@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>About Us</h1>
+        </section>
+
+        <section class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h1>We are here for auto enthusiasts.</h1>
+                    <p>Car Sansar is an auto website that includes car news, specifications, comparisons, reviews, and a
+                        consultancy form for a simple car buying experience, which will be extremely beneficial for
+                        people who are about to purchase a new vehicle. There are many such auto websites in Nepal,
+                        however Car Sansar would be the first to include a consultancy form for a simple car buying
+                        process. Customers can also buy and sell cars online. <br> Many clients are perplexed when
+                        purchasing a new vehicle. They can't make up their minds on which car is better for them. As a
+                        result, there will be a form for them to fill out describing their priorities and requirements
+                        for their car. It will also include customer's budget, their contact information and the cars
+                        they have shortlisted to buy. All of this information will be used to follow up with customers
+                        over the phone and assist them in selecting the ideal car for them. Customers can also post
+                        their used car pictures, including its details and contact information, after logging into the
+                        website. The vehicle will be listed on the used market, and customers who visit the website will
+                        be able to buy or sell their vehicle online. They don’t need to visit re-condition house to sell
+                        or buy used cars.</p>
+                    <a href= "{% url 'home' %}" class="more submit-btn">Explore</a>
+                </div>
+                <div class="about-col">
+                    <img src="static/images/abt.png" alt="">
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        {% include "frontend/footer.html" %}
+                  
+
+
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>
+
+        </html>
+    
+  

@@ -1,0 +1,42 @@
+.detailsrow{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-5{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-5 img{
+max-width: 100%;
+padding: 50px 0;
+}
+
+.col-5 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px;
+}
+
+.small-img-row{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+    
+}
+
+.about-col h4{
+    background-color: rgb(223, 181, 181);
+}
+
+.about-col li{
+    color: rgb(92, 88, 88);
+}

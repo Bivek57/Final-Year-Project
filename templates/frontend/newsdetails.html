@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="sub-header">
+            {% include "frontend/base.html" %}
+            <h1>Market News</h1>
+        </section>
+
+        <section class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h1>{{news_details.title}}</h1>
+                    <div class="">
+                        {{ news_details.full_description | safe}}
+                    </div>
+                </div>
+                <div class="about-col">
+                    <img src="{{ news_details.image.url }}" alt="">
+                </div>
+            </div>
+        </section>
+
+        {% include "frontend/footer.html" %}
+
+
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showMenu() {
+                navlinks.style.right = "0";
+            }
+
+            function hideMenu() {
+                navlinks.style.right = "-200px"
+            }
+
+        </script>

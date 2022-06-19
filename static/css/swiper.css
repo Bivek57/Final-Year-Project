@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.swiperr{
+    position: relative;
+    height: 100%;
+    background: white;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    background: rgb(233 233 233);
+    border-radius: 15px;
+    
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    background: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+  }
